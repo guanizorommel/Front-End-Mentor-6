@@ -59,7 +59,7 @@ section {
 
 .container-box {
     padding: 5%; /*add space to left and right*/
-    max-width: 850px; /*set the max-width of the card*/
+    max-width: 1400px; /*set the max-width of the card*/
 }
 
 .container {
