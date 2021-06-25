@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*Typographies*/
+h1,h2,h3,p {
+    font-family: "Karla", sans-serif;
+}
+
+h1 {
+    color: hsl(179, 62%, 43%);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+p {
+    color: hsl(218, 22%, 67%);
+    font-size: 1rem; 
+    line-height: 1.6;
+}
+
+button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: hsl(71, 73%, 54%);
+    border: none;
+    box-shadow: 0px 10px 25px 0px hsl(240, 1%, 27%, 0.2);
+}
+
+button p {
+    color: #FFF;
+}
+
+/*Layouts*/
+
+section {
+    background-color: hsl(204, 43%, 93%);
+    min-height: 100vh;
+    min-width: 100vw;
+    /*centering the container class*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-box {
+    padding: 5%; /*add space to left and right*/
+    max-width: 850px; /*set the max-width of the card*/
+}
+
+.container {
+    box-shadow: 0px 10px 25px 0px hsl(240, 1%, 27%, 0.2);
+    border-radius: 10px; /*to align the background border radius based on cards radius*/
+    /*Convert the container into grid*/
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Two columns with equal size*/
+    grid-template-rows: 1fr 1fr; /*Two rows with equal size*/
+
+    /*Specifies where the grid should be using template area*/
+    grid-template-areas:
+    "title title"
+    "subscription whyus"
+}
+
+/*Assigns title to grid template area with some paddings css and background colors*/
+.title {
+    grid-area: title; 
+    background-color: #fff;
+    padding: 40px;
+
+    display: flex; /*To center it inside grid box i combined flexbox*/
+    flex-direction: column;
+    justify-content: center;
+
+    /*Border radiuses*/
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.subscription {
+    grid-area: subscription;
+    background-color:hsl(179, 62%, 43%);
+    padding: 40px;
+
+    /*Border radiuses*/
+    border-bottom-left-radius: 10px;
+}
+
+.whyus {
+    grid-area: whyus;
+    background-color:hsl(179, 62%, 43%, 0.8);
+    padding: 40px;
+
+    /*Border radiuses*/
+    border-bottom-right-radius: 10px;
+}
+
+/*CSS for elements*/
+
+.title {
+    background-color: #fff;
+}
+
+.bright-yellow {
+    color: hsl(71, 73%, 54%);
+}
+
+.title h1 {
+    padding-bottom: 10px;
+}
+
+.title h2 {
+    padding: 15px 0px;
+}
+
+.dollar {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.pricing {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pricing h2 {
+    align-self: center;
+    font-size: 2rem;
+}
+
+.pricing p {
+    align-self: center;
+    padding-left: 10px;
+    color: hsl(204, 43%, 93%, 0.5);
+}
+
+.whyus p {
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/*Media Query*/
+@media (max-width: 500px){
+    /*Change the gridlayout*/
+    .container {
+    grid-template-columns: 1fr; /*1 column */
+    grid-template-rows: 1fr 1fr 1fr; /*3 rows with equal size*/
+
+
+    /*Change the assignment of template areas*/
+    grid-template-areas:
+    "title"
+    "subscription"
+     "whyus"
+    }
+
+    .subscription {
+        border-radius: 0px; /*remove the border radius from desktop view*/
+    }
+
+    .whyus {
+        border-bottom-left-radius: 10px; /*add border radius on bottom*/
+        border-bottom-right-radius: 10px;
+    }
+
+
+}
